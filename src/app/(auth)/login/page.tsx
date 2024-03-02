@@ -34,7 +34,7 @@ export default function Login() {
 
       <div className="mt-6 text-sm text-gray-400">
         New on Netflix?
-        <Link href={"/login"} className="ml-1 text-white hover:underline">
+        <Link href={"/signup"} className="ml-1 text-white hover:underline">
           Sign up Now
         </Link>
       </div>
