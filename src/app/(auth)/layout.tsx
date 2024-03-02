@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-
 import Image from "next/image";
 
 // Images
@@ -8,7 +7,7 @@ import Logo from "../../../public/netflix_logo.svg";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
-    <section className="relative h-screen w-screen flex-col bg-black md:items-center md:text-center md:bg-transparent">
+    <section className="flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
       <Image
         src={BackgroudnImage}
         alt="Image from Netflix Login Background"
