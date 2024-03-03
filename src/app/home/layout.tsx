@@ -6,10 +6,14 @@ import { authConfig } from "@/utils/auth";
 
 import { redirect } from "next/navigation";
 
-export default function HomeLayout({ children }: { children: ReactNode }) {
-  const sessions = getServerSession(authConfig);
+export default async function HomeLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const session = await getServerSession(authConfig);
 
-  if (!sessions) {
+  if (!session) {
     return redirect("/signup");
   }
 

@@ -35,7 +35,7 @@ export default async function Login() {
             type="submit"
             className="w-full text-white bg-[#ff0b16] hover:bg-[#ff0b17d8]"
           >
-            Sign Up
+            Log In
           </Button>
         </div>
       </form>
