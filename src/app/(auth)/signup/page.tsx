@@ -6,9 +6,20 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-import GithubLogInBtn from "@/components/GithubLogInBtn";
+// Auth Session
+import { getServerSession } from "next-auth";
+import { authConfig } from "@/utils/auth";
 
-export default function SignUp() {
+import GithubLogInBtn from "@/components/GithubLogInBtn";
+import { redirect } from "next/navigation";
+
+export default async function SignUp() {
+  const session = await getServerSession(authConfig);
+
+  if (session) {
+    return redirect("/home");
+  }
+
   return (
     <div className="mt-24 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-xl md:px-14">
       <form>
@@ -37,7 +48,7 @@ export default function SignUp() {
       </div>
 
       <div className="flex w-full justify-center mt-6 gap-x-3">
-        <GithubLogInBtn text="Sign Up with Github" />
+        <GithubLogInBtn />
       </div>
     </div>
   );

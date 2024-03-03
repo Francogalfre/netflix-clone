@@ -1,12 +1,15 @@
-import Image from "next/image";
+// Auth Session
+import { authConfig } from "@/utils/auth";
+import { getServerSession } from "next-auth";
 
-import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Netflix clone
-      <Button>Hello from ShadCN</Button>
-    </main>
-  );
+export default async function Home() {
+  const session = await getServerSession(authConfig);
+
+  if (!session) {
+    return redirect("/login");
+  } else {
+    return redirect("/home");
+  }
 }
