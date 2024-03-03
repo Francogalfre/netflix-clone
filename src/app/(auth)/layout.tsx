@@ -18,9 +18,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
       <Image
         src={Logo}
         alt="Netflix Logo"
-        width={130}
-        height={130}
-        className="absolute top-4 left-4 md:left-10 md:top-6 object-contain saturate-150"
+        className="absolute top-4 left-4 md:left-10 md:top-6 object-contain saturate-150 w-32 h-32"
         priority
       />
       {children}

@@ -40,11 +40,9 @@ export default function Login() {
       </div>
 
       <div className="flex w-full justify-center mt-6 gap-x-3">
-        <Button variant={"outline"} size="icon">
+        <Button variant={"outline"} className="flex gap-2 items-center">
+          Log In with Github
           <GithubIcon className="w-4 h-4" />
-        </Button>
-        <Button variant={"outline"} size="icon">
-          <Image src={GoogleIcon} className="w-6 h-6" alt="Google Icon Image" />
         </Button>
       </div>
     </div>
