@@ -1,15 +1,12 @@
 import React from "react";
 
 import Link from "next/link";
-import Image from "next/image";
 
 // Components
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-// Icons
-import { GithubIcon } from "lucide-react";
-import GoogleIcon from "../../../../public/google.svg";
+import GithubLogInBtn from "@/components/GithubLogInBtn";
 
 export default function Login() {
   return (
@@ -40,10 +37,7 @@ export default function Login() {
       </div>
 
       <div className="flex w-full justify-center mt-6 gap-x-3">
-        <Button variant={"outline"} className="flex gap-2 items-center">
-          Log In with Github
-          <GithubIcon className="w-4 h-4" />
-        </Button>
+        <GithubLogInBtn text="Log In with Github" />
       </div>
     </div>
   );

@@ -2,8 +2,8 @@ import { NextAuthOptions } from "next-auth";
 
 // Prisma Config
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import prisma from "../utils/db";
 import { Adapter } from "next-auth/adapters";
+import prisma from "../utils/db";
 
 // Providers
 import GithubProvider from "next-auth/providers/github";
@@ -28,4 +28,5 @@ export const authConfig = {
       from: process.env.EMAIL_FROM,
     }),
   ],
+  secret: process.env.NEXTAUTH_URL,
 } satisfies NextAuthOptions;
