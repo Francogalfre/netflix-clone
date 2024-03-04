@@ -22,7 +22,7 @@ export default async function Login() {
 
   return (
     <div className="mt-24 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-xl md:px-14">
-      <form>
+      <form method="POST" action="/api/auth/signin">
         <h1 className="text-3xl font-semibold mb-6">Log In</h1>
         <div className="flex flex-col gap-6">
           <Input

@@ -4,6 +4,9 @@ import { ReactNode } from "react";
 import { getServerSession } from "next-auth";
 import { authConfig } from "@/utils/auth";
 
+// Components
+import Navbar from "@/components/Navbar";
+
 import { redirect } from "next/navigation";
 
 export default async function HomeLayout({
@@ -17,5 +20,12 @@ export default async function HomeLayout({
     return redirect("/signup");
   }
 
-  return <div>{children}</div>;
+  return (
+    <>
+      <Navbar />
+      <main className="w-full max-w-7xl mx-auto sm:px-6 lg:px-8">
+        {children}
+      </main>
+    </>
+  );
 }
