@@ -3,7 +3,7 @@ import { NextAuthOptions } from "next-auth";
 // Prisma Config
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { Adapter } from "next-auth/adapters";
-import prisma from "../utils/db";
+import prisma from "./database/db";
 
 // Providers
 import GithubProvider from "next-auth/providers/github";

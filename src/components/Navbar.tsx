@@ -31,42 +31,44 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="flex w-screen max-w-7xl mx-auto items-center justify-between px-5 sm:px-6 py-6 lg:px-8 bg-gradient-to-b from-black ">
-      <div className="flex items-center">
-        <Link href={"/home"}>
-          <Image src={Logo} alt="Netflix Logo" className="w-32" priority />
-        </Link>
-        <ul className="hidden lg:flex gap-x-4 ml-14">
-          {links.map((link, index) => (
-            <div key={index}>
-              {path === link.href ? (
-                <li>
-                  <Link
-                    href={link.href}
-                    className="text-white font-bold text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ) : (
-                <li>
-                  <Link
-                    href={link.href}
-                    className="text-[#e5e5e5] hover:text-[#b3b3b3] text-sm transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              )}
-            </div>
-          ))}
-        </ul>
-      </div>
+    <nav className="flex w-full bg-gradient-to-b from-black ">
+      <div className="flex w-full justify-between items-center py-6 px-12 sm:px-8 lg:px-16">
+        <div className="flex items-center">
+          <Link href={"/home"}>
+            <Image src={Logo} alt="Netflix Logo" className="w-32" priority />
+          </Link>
+          <ul className="hidden lg:flex gap-x-4 ml-14">
+            {links.map((link, index) => (
+              <div key={index}>
+                {path === link.href ? (
+                  <li>
+                    <Link
+                      href={link.href}
+                      className="text-white font-bold text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ) : (
+                  <li>
+                    <Link
+                      href={link.href}
+                      className="text-[#e5e5e5] hover:text-[#b3b3b3] text-sm transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                )}
+              </div>
+            ))}
+          </ul>
+        </div>
 
-      <div className="flex gap-x-6 items-center">
-        <Search className="w-5 h-5 text-gray-300 cursor-pointer" />
-        <Bell className="w-6 h-5 text-gray-300 cursor-pointer" />
-        <UserNav />
+        <div className="flex gap-x-6 items-center">
+          <Search className="hidden sm:flex w-5 sm:h-5 text-gray-300 cursor-pointer" />
+          <Bell className="hidden sm:flex w-5 sm:h-5 text-gray-300 cursor-pointer" />
+          <UserNav />
+        </div>
       </div>
     </nav>
   );
