@@ -35,7 +35,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
             height={900}
           />
 
-          <div className="relative bottom-20 h-[120px] flex flex-col bg-gray-900 py-4 px-4">
+          <div className="relative bottom-20 h-full max-h-36 flex flex-col bg-gray-900 py-4 px-4">
             <div className="flex gap-x-2">
               <PlayCircle
                 width={25}
