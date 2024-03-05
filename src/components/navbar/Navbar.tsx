@@ -8,7 +8,7 @@ import Link from "next/link";
 
 // Components
 import UserNav from "./UserNav";
-import Logo from "../../public/netflix_logo.svg";
+import Logo from "../../../public/netflix_logo.svg";
 
 // Icons
 import { Search } from "lucide-react";
@@ -31,7 +31,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="flex w-full bg-gradient-to-b from-black ">
+    <nav className="flex w-full bg-gradient-to-b from-black to-transparent via-black/50">
       <div className="flex w-full justify-between items-center py-6 px-12 sm:px-8 lg:px-16">
         <div className="flex items-center">
           <Link href={"/home"}>

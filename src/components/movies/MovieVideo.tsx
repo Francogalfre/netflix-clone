@@ -1,18 +1,16 @@
 import React from "react";
 
-import getFirtsMovie from "../utils/database/functions";
+import { getFirtsMovie } from "../../utils/database/functions";
 
 // Icons
 import { Play } from "lucide-react";
 import { Info } from "lucide-react";
 
 // Components
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 const MovieVideo = async () => {
   const data = await getFirtsMovie();
-
-  console.log(data);
 
   return (
     <div className="h-[55vh] lg:h-[60vh] w-full flex justify-start text-start items-center">

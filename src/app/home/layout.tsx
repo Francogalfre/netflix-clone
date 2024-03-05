@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth";
 import { authConfig } from "@/utils/auth";
 
 // Components
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 
 import { redirect } from "next/navigation";
 

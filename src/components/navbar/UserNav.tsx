@@ -11,13 +11,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuItem,
-} from "./ui/dropdown-menu";
+} from "../ui/dropdown-menu";
 
 // Button
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 // Avatar
-import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 
 const UserNav = () => {
   return (
