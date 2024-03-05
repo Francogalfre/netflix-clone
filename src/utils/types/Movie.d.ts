@@ -6,6 +6,8 @@ export interface Movie {
   videoSource: string;
   age: number;
   duration: number;
+  youtubeString: string;
+  release: number;
   WatchLists: {
     id: string;
     userId: string;

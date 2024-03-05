@@ -2,7 +2,7 @@ import React from "react";
 
 // Movies Components
 import MovieVideo from "@/components/movies/MovieVideo";
-import RecentlyMovies from "@/components/movies/RecentlyMovies";
+import RecentlyMovies from "@/app/home/components/RecentlyMovies";
 
 export default function HomePage() {
   return (

@@ -17,21 +17,6 @@ export async function getFirtsMovie() {
   return data;
 }
 
-export async function getMovies() {
-  const data = await prisma.movie.findMany({
-    select: {
-      id: true,
-      overview: true,
-      title: true,
-      WatchLists: true,
-      imageString: true,
-      videoSource: true,
-    },
-  });
-
-  return data;
-}
-
 export async function getRecentlyMovies() {
   const data = await prisma.movie.findMany({
     select: {
@@ -41,8 +26,10 @@ export async function getRecentlyMovies() {
       WatchLists: true,
       imageString: true,
       videoSource: true,
+      youtubeString: true,
       duration: true,
       age: true,
+      release: true,
     },
     orderBy: {
       createdAt: "desc",

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 import Image from "next/image";
 
@@ -8,9 +10,13 @@ import { Movie } from "@/utils/types/Movie";
 // Icons
 import { PlayCircle, PlusCircle, MinusCircle } from "lucide-react";
 
+import MovieModal from "./MovieModal";
+
 const MovieCard = ({ movie }: { movie: Movie }) => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="relative h-40 group" key={movie.id}>
+    <main className="relative h-40 group" key={movie.id}>
       <Image
         className="reounded-sm absolute w-full h-full object-cover"
         src={movie.imageString}
@@ -31,18 +37,25 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
 
           <div className="relative bottom-20 h-[120px] flex flex-col bg-gray-900 py-4 px-4">
             <div className="flex gap-x-2">
-              <PlayCircle className="cursor-pointer" />
+              <PlayCircle
+                width={25}
+                height={25}
+                onClick={() => setOpen(true)}
+                className="cursor-pointer"
+              />
               {movie.WatchLists ? (
-                <PlusCircle className="cursor-pointer" />
+                <PlusCircle width={25} height={25} className="cursor-pointer" />
               ) : (
-                <MinusCircle className="cursor-pointer" />
+                <MinusCircle
+                  width={25}
+                  height={25}
+                  className="cursor-pointer"
+                />
               )}
             </div>
             <h2 className="mt-2 text-xl font-semibold">{movie.title}</h2>
             <div className="flex gap-x-3 items-center mt-2">
-              <span className="text-xs text-green-500">
-                {Math.floor(Math.random() * 11) + 90}% Match
-              </span>
+              <span className="text-xs text-green-500">99% Match</span>
               <span className="border border-gray-500 px-1 py-[2px] text-xs text-gray-400">
                 + {movie.age}
               </span>
@@ -51,7 +64,9 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
           </div>
         </div>
       </div>
-    </div>
+
+      <MovieModal movie={movie} state={open} changeState={setOpen} />
+    </main>
   );
 };
 
