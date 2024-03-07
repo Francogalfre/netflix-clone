@@ -9,10 +9,17 @@ import Link from "next/link";
 // Components
 import UserNav from "./UserNav";
 import Logo from "../../../public/netflix_logo.svg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
 
 // Icons
-import { Search } from "lucide-react";
-import { Bell } from "lucide-react";
+import { Search, Bell, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const path = usePathname();
@@ -37,6 +44,38 @@ const Navbar = () => {
           <Link href={"/home"}>
             <Image src={Logo} alt="Netflix Logo" className="w-32" priority />
           </Link>
+          <div className="relative lg:hidden pl-6">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-x-1 text-white font-bold text-sm">
+                Open <ChevronDown />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {links.map((link, index) => (
+                  <div key={index}>
+                    {path === link.href ? (
+                      <DropdownMenuItem>
+                        <Link
+                          href={link.href}
+                          className="text-white font-bold text-sm"
+                        >
+                          {link.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ) : (
+                      <DropdownMenuItem>
+                        <Link
+                          href={link.href}
+                          className="text-[#e5e5e5] hover:text-[#b3b3b3] text-sm transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    )}
+                  </div>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
           <ul className="hidden lg:flex gap-x-4 ml-14">
             {links.map((link, index) => (
               <div key={index}>

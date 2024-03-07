@@ -1,4 +1,6 @@
 import React from "react";
+
+// Types
 import type { Movie } from "@/utils/types/Movie";
 
 // Icons
@@ -13,7 +15,6 @@ import {
   DialogDescription,
 } from "../ui/dialog";
 import { Button } from "../ui/button";
-import { redirect } from "next/navigation";
 
 interface Props {
   movie: Movie;
